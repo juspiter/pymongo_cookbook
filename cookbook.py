@@ -3,8 +3,8 @@ from recipe import Recipe
 
 
 class Cookbook:
-	def __init__(self, conn: str):
-		self.recipes = MongoClient(conn).cookbook.recipes
+	def __init__(self, addr: str):
+		self.recipes = MongoClient(host=[addr]).cookbook.recipes
 
 	def __str__(self):
 		"Retorna uma string com os nomes de todas receitas do livro separadas por tipo"
